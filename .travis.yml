@@ -3,15 +3,9 @@ language: C
 script:
   - sudo cp libssl.so.1.1 /usr/lib/x86_64-linux-gnu/libssl.so.1.1
   - sudo cp libcrypto.so.1.1 /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
-#  - tar xvf openssl-1.1.1.tar.gz > log.txt
-#  - cd openssl-1.1.1
-#  - sudo ./config -Wl,--enable-new-dtags,-rpath,'$(LIBRPATH)' > log.txt
-#  - sudo make --jobs=4 > log.txt
-#  - sudo make install --jobs=4 > log.txt
-#  - cd ..
 
   - openssl version
-  
   - whereis libcrypto
   - ldd irromion
+  
   - ./irromion
