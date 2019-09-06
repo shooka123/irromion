@@ -1,7 +1,9 @@
 language: C
 
+env:
+  global:
+    - OPENSSL_VERSION=1.1.0
+
 script:
-  - sudo apt-get remove libssl-dev openssl
-  - sudo apt-get install libssl-dev openssl
   - openssl version
   - ./irromion
