@@ -1,7 +1,7 @@
 language: C
 
 script:
-  - sudo apt-get upgrade
+  - sudo apt-get upgrade --fix-missing
   - sudo apt-get update
   - ldd irromion
   - LD_LIBRARY_PATH=`pwd` ./irromion
