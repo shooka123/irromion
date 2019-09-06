@@ -20,14 +20,22 @@ int main(void) {
 }
 
 static coroutine void attacker(const struct ipaddr *remote_addr) {
-    int tcp_stream;
-    try_connect:;
-    if ((tcp_stream = tcp_connect(remote_addr, now() + 7000)) == -1) {
+    int socket_handle;
+
+    try_connect_tcp:;
+    if ((socket_handle = tcp_connect(remote_addr, now() + 7000)) == -1) {
         perror("Failed to connect a TCP stream");
-        goto try_connect;
+        goto try_connect_tcp;
     }
 
-    if (tcp_close(tcp_stream, now() + 7000) == -1) {
+    if (tls_attach_client(socket_handle, now() + 7000) == -1) {
+        perror("Failed to attach a TLS client");
+        goto try_connect_tcp;
+    }
+
+    
+
+    if (tcp_close(socket_handle, now() + 7000) == -1) {
         perror("Failed to close a TCP stream");
     }
 }
