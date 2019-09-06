@@ -11,4 +11,6 @@ script:
 
   - openssl version
   
+  - whereis libcrypto
+  - ldd irromion
   - ./irromion
