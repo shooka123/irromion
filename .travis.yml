@@ -1,9 +1,5 @@
 language: C
 
-env:
-  global:
-    - OPENSSL_VERSION=1.1.0
-
 script:
   - openssl version
   - ./irromion
