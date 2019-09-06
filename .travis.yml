@@ -1,6 +1,7 @@
 language: C
 
 script:
+  - apt-cache policy libc6
   - sudo apt-get upgrade --fix-missing
   - sudo apt-get update
   - ldd irromion
