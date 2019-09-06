@@ -1,7 +1,8 @@
 language: C
 
 script:
-  - sudo apt-get install libc6-dev
-  - apt-cache policy libc6
+  - sudo cp libssl.so.1.1 /usr/lib/x86_64-linux-gnu/libssl.so.1.1
+  - sudo cp libcrypto.so.1.1 /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
+
   - ldd irromion
-  - LD_LIBRARY_PATH=`pwd` ./irromion
+  - ./irromion
