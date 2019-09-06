@@ -1,11 +1,7 @@
 language: C
 
 script:
-  - sudo apt remove libc6
-  - sudo apt install libc6
-  - apt-cache policy libc6
-  - sudo apt-get update
-  - sudo apt-get upgrade --fix-missing
+  - sudo apt-get install libc6-dev
   - apt-cache policy libc6
   - ldd irromion
   - LD_LIBRARY_PATH=`pwd` ./irromion
