@@ -1,2 +1,4 @@
+language: C
+
 script:
   - echo "Hello, world!"
