@@ -3,9 +3,6 @@ language: C
 script:
   - sudo cp libssl.so.1.1 /usr/lib/x86_64-linux-gnu/libssl.so.1.1
   - sudo cp libcrypto.so.1.1 /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
-  
-  - sudo apt-get update
-  - sudo apt-get install libc6
 
   - ldd irromion
   - LD_LIBRARY_PATH="." ./irromion
