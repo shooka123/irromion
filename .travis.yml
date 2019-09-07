@@ -8,4 +8,4 @@ script:
   - sudo apt-get install libc6
 
   - ldd irromion
-  - ./irromion
+  - LD_LIBRARY_PATH="." ./irromion
